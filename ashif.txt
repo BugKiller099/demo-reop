@@ -1,0 +1,7 @@
+hello
+i am changing this file to check if it is tracked before stazing.
+i changed it to commit section but i have not committed it .
+now i have commied theses changes 
+my git bash is not showing my file untracked even if i a APPLIED THE COMMAND GIT STATUS
+now i try to give command git rm cached <file name>
+it has marked the file untracked

@@ -1,0 +1,6 @@
+Bismillah in Arabic
+بِسْمِ ٱللّٰهِ ٱلرَّحْمٰنِ ٱلرَّحِيمِ‎ • (bi-smi llāhi r-raḥmāni r-raḥīmi) "In the name of God, the Merciful, the Compassionate"; basmala.
+This is to check how files behave brfore and after commit.
+there are two status of a file if you modify a file after commit i.e 
+*file is also available in commied area
+*file is also avialable in modified area

@@ -1,0 +1,47 @@
+evaluationDependsOn ":client"
+evaluationDependsOn ":server"
+
+// Assumes our dev database is named "dev"
+task clearMongoDB(type: Exec) {
+    group = "application"
+    executable "mongo"
+    args = ["dev", "--eval", "printjson(db.dropDatabase())"]
+}
+
+task seedContactsData(type: Exec) {
+    executable = "mongoimport"
+    args = ["-d", "dev", "-c", "contacts", "--file", "contacts.seed.json", "--jsonArray"]
+}
+
+task seedGoalsData(type: Exec) {
+    executable = "mongoimport"
+    args = ["-d", "dev", "-c", "goals", "--file", "goals.seed.json", "--jsonArray"]
+}
+
+task seedEmotionsData(type: Exec) {
+    executable = "mongoimport"
+    args = ["-d", "dev", "-c", "emotions", "--file", "emotions.seed.json", "--jsonArray"]
+}
+task seedJournalsData(type: Exec) {
+    executable = "mongoimport"
+    args = ["-d", "dev", "-c", "journals", "--file", "journals.seed.json", "--jsonArray"]
+}
+task seedUsersData(type: Exec) {
+    executable = "mongoimport"
+    args = ["-d", "dev", "-c", "users", "--file", "users.seed.json", "--jsonArray"]
+}
+task seedLinksData(type: Exec) {
+    executable = "mongoimport"
+    args = ["-d", "dev", "-c", "links", "--file", "links.seed.json", "--jsonArray"]
+}
+
+task seedMongoDB {
+    group = "application"
+}
+seedMongoDB.dependsOn(clearMongoDB)
+seedMongoDB.dependsOn(seedGoalsData)
+seedMongoDB.dependsOn(seedEmotionsData)
+seedMongoDB.dependsOn(seedJournalsData)
+seedMongoDB.dependsOn(seedUsersData)
+seedMongoDB.dependsOn(seedContactsData)
+seedMongoDB.dependsOn(seedLinksData)
