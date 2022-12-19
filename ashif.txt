@@ -5,3 +5,27 @@ now i have commied theses changes
 my git bash is not showing my file untracked even if i a APPLIED THE COMMAND GIT STATUS
 now i try to give command git rm cached <file name>
 it has marked the file untracked
+hello i am trying to learn git remote command .
+if you want to upload your files to github then 
+you can give a command:
+git remote add <name of your remote repo which you wnat to call . Generally we call it origin . > <link of the empty repository created on git hub>
+
+
+then give command
+git push -u <origin> master
+you will see uploading process on your screen.
+
+
+
+$ git push origin -u master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 223 bytes | 223.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/BugKiller099/demo-reop.git
+   65ea6da..f1ffae7  master -> master
+branch 'master' set up to track 'origin/master'.
+
